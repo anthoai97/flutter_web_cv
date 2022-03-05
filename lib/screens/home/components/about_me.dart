@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_cv_web/core/utils/utils.dart';
 import 'package:my_cv_web/widgets/custom_animation_container.dart';
 
 import '../../../resource/colors.dart';
@@ -113,7 +114,7 @@ class _AboutMeSectionState extends State<AboutMeSection> {
                       key: _imageKey,
                       borderRadius: BorderRadius.circular(_imageRadius),
                       child: Image.asset(
-                        'images/avatar.jpg',
+                        path('images/avatar.jpg'),
                         width: double.infinity,
                       ),
                     ),

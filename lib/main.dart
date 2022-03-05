@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:my_cv_web/controllers/menu_controller.dart';
 import 'package:my_cv_web/resource/colors.dart';
 import 'package:my_cv_web/resource/styles.dart';
@@ -15,6 +16,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // FlutterNativeSplash.remove();
+
     return MaterialApp(
       theme: ThemeData(
         scaffoldBackgroundColor: ColorsDef.backgroundColor,
@@ -45,7 +48,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => MenuController(),
         )
-      ], child: MainPage()),
+      ], child: const MainPage()),
     );
   }
 }

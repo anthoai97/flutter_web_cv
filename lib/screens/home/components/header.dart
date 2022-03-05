@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_cv_web/controllers/menu_controller.dart';
 import 'package:my_cv_web/core/utils/responsive.dart';
+import 'package:my_cv_web/core/utils/utils.dart';
 import 'package:my_cv_web/resource/colors.dart';
 import 'package:my_cv_web/resource/images.dart';
 import 'package:my_cv_web/widgets/custom_animation_container.dart';
@@ -40,7 +41,7 @@ class Header extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Image.asset(
-            ResImage.logo,
+            path(ResImage.logo),
             width: 46,
             height: 46,
           ),

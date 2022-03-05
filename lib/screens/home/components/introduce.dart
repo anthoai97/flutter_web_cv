@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_cv_web/core/utils/utils.dart';
 import 'package:my_cv_web/widgets/custom_animation_container.dart';
 
 import '../../../core/utils/responsive.dart';
@@ -117,7 +118,7 @@ class IntroduceSection extends StatelessWidget {
                     height: logoSize - 15,
                     margin: const EdgeInsets.only(right: 30),
                     child: Image.asset(
-                      'images/flutter_logo.png',
+                      path('images/flutter_logo.png'),
                     ),
                   ),
                   Container(
@@ -125,7 +126,7 @@ class IntroduceSection extends StatelessWidget {
                     height: logoSize,
                     margin: const EdgeInsets.only(right: 30),
                     child: Image.asset(
-                      'images/dart_logo.png',
+                      path('images/dart_logo.png'),
                     ),
                   ),
                   Container(
@@ -133,7 +134,7 @@ class IntroduceSection extends StatelessWidget {
                     height: logoSize,
                     margin: const EdgeInsets.only(right: 30),
                     child: Image.asset(
-                      'images/android_logo.png',
+                      path('images/android_logo.png'),
                     ),
                   ),
                   Container(
@@ -141,7 +142,7 @@ class IntroduceSection extends StatelessWidget {
                     height: logoSize,
                     margin: const EdgeInsets.only(right: 15),
                     child: Image.asset(
-                      'images/kotlin_logo.png',
+                      path('images/kotlin_logo.png'),
                     ),
                   ),
                   Container(
@@ -149,14 +150,14 @@ class IntroduceSection extends StatelessWidget {
                     height: logoSize + 34,
                     margin: const EdgeInsets.only(right: 20),
                     child: Image.asset(
-                      'images/firebase_logo.png',
+                      path('images/firebase_logo.png'),
                     ),
                   ),
                   SizedBox(
                     width: logoSize - 20,
                     height: logoSize - 20,
                     child: Image.asset(
-                      'images/swift_logo.png',
+                      path('images/swift_logo.png'),
                     ),
                   ),
                 ],
@@ -166,7 +167,7 @@ class IntroduceSection extends StatelessWidget {
           CustomAnimationContainer(
             duration: const Duration(milliseconds: animationDuration),
             position: animationPosition,
-            delayDuration: const Duration(milliseconds: delayDuration + 800),
+            delayDuration: const Duration(milliseconds: delayDuration + 300),
             child: Container(
               width: 200,
               height: 50,
