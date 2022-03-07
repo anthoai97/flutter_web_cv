@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_cv_web/resource/styles.dart';
 
 import '../resource/colors.dart';
 
@@ -28,13 +29,19 @@ class SectionTitle extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 15),
-          Text(
-            title,
-            style: const TextStyle(
-              fontWeight: FontWeight.w600,
-              color: ColorsDef.lightestSlate,
-              fontSize: 32,
-              height: 1.1,
+          Container(
+            padding: const EdgeInsets.only(top: 8),
+            alignment: Alignment.center,
+            child: Text(
+              title,
+              style: const TextStyle(
+                fontWeight: FontWeight.w600,
+                color: ColorsDef.lightestSlate,
+                fontFamily: FontDef.calibre,
+                fontSize: 32,
+                height: 1.1,
+              ),
+              textAlign: TextAlign.end,
             ),
           ),
           Container(

@@ -1,3 +1,4 @@
+import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -11,6 +12,7 @@ import '../../controllers/menu_controller.dart';
 import '../../resource/styles.dart';
 import '../../widgets/section_title.dart';
 import 'components/about_me.dart';
+import 'components/experience.dart';
 import 'components/header.dart';
 import 'components/introduce.dart';
 
@@ -21,9 +23,11 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage>
+    with AutomaticKeepAliveClientMixin {
   final List<int> lists = List<int>.generate(50, (index) => index);
   late ScrollController _scrollController;
+  late PageController _pageController;
 
   bool _isScrollDown = true;
   bool _onTop = true;
@@ -39,6 +43,8 @@ class _HomePageState extends State<HomePage> {
         _onTop = false;
       }
     });
+
+    _pageController = PageController();
   }
 
   @override
@@ -47,8 +53,15 @@ class _HomePageState extends State<HomePage> {
     super.dispose();
   }
 
+  final List<Widget> _listPage = [
+    const IntroduceSection(),
+    const AboutMeSection(),
+    const Experience(),
+  ];
+
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     final isDesktop = Responsive.isDesktop(context);
     const double maxWidth = 1000;
     final double mainPadding = isDesktop ? 150 : 25;
@@ -74,24 +87,13 @@ class _HomePageState extends State<HomePage> {
           child: Stack(
             alignment: Alignment.topCenter,
             children: [
-              SizedBox(
-                width: double.infinity,
-                child: SingleChildScrollView(
-                  controller: _scrollController,
-                  child: Column(
-                    children: [
-                      Container(
-                        constraints: const BoxConstraints(maxWidth: maxWidth),
-                        child: Column(
-                          children: const [
-                            IntroduceSection(),
-                            AboutMeSection(),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+              PageView.builder(
+                scrollDirection: Axis.vertical,
+                pageSnapping: false,
+                itemBuilder: (BuildContext context, int index) {
+                  return _listPage[index];
+                },
+                itemCount: _listPage.length,
               ),
               Positioned(
                 top: 0,
@@ -112,4 +114,7 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

@@ -34,7 +34,6 @@ class _CustomAnimationContainerState extends State<CustomAnimationContainer>
   void initState() {
     super.initState();
     _controller = AnimationController(vsync: this, duration: widget.duration);
-
     _opacity = Tween<double>(begin: 0, end: 1).animate(_controller);
     _translate = Tween<double>(
             begin: widget.type == CustomTranslateType.down
@@ -45,7 +44,9 @@ class _CustomAnimationContainerState extends State<CustomAnimationContainer>
 
     WidgetsBinding.instance!.addPostFrameCallback((_) async {
       await Future.delayed(widget.delayDuration);
-      await _controller.forward();
+      if (mounted) {
+        await _controller.forward();
+      }
     });
   }
 

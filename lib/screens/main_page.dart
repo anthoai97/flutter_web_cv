@@ -37,16 +37,16 @@ class _MainPageState extends State<MainPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: loading
-          ? WebPlashPage(
-              onCompleteAnimation: () {
-                setState(() {
-                  loading = false;
-                });
-              },
-            )
-          : const HomePage(),
-      // body: HomePage(),
+      // body: loading
+      //     ? WebPlashPage(
+      //         onCompleteAnimation: () {
+      //           setState(() {
+      //             loading = false;
+      //           });
+      //         },
+      //       )
+      //     : const HomePage(),
+      body: HomePage(),
     );
   }
 }

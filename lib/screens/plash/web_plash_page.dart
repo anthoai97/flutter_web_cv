@@ -55,6 +55,14 @@ class _WebPlashPageState extends State<WebPlashPage>
   }
 
   @override
+  void dispose() {
+    _rotationController.dispose();
+    _fadeTransitionController.dispose();
+    _scaleTransitionController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return ScaleTransition(
       scale:

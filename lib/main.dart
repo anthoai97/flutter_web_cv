@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
     FlutterNativeSplash.remove();
 
     return MaterialApp(
+      title: "Thoại An",
       theme: ThemeData(
         scaffoldBackgroundColor: ColorsDef.backgroundColor,
         fontFamily: FontDef.sFMono,
