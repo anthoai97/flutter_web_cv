@@ -1,6 +1,6 @@
 .PHONY: build
 build:
-		flutter build web --web-renderer auto --release
+		flutter build web --web-renderer html --release
 
 .PHONY: run
 run:
