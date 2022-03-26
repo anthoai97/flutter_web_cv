@@ -119,7 +119,7 @@ class IntroduceSection extends StatelessWidget {
                     Container(
                       width: logoSize - 15,
                       height: logoSize - 15,
-                      margin: const EdgeInsets.only(right: 30),
+                      margin: const EdgeInsets.only(right: 45),
                       child: Image.asset(
                         path('images/flutter_logo.png'),
                       ),
@@ -133,19 +133,19 @@ class IntroduceSection extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      width: logoSize,
-                      height: logoSize,
+                      width: logoSize + 38,
+                      height: logoSize + 38,
                       margin: const EdgeInsets.only(right: 30),
                       child: Image.asset(
-                        path('images/android_logo.png'),
+                        path('images/react_logo.png'),
                       ),
                     ),
                     Container(
                       width: logoSize,
                       height: logoSize,
-                      margin: const EdgeInsets.only(right: 15),
+                      margin: const EdgeInsets.only(right: 30),
                       child: Image.asset(
-                        path('images/kotlin_logo.png'),
+                        path('images/android_logo.png'),
                       ),
                     ),
                     Container(
@@ -175,8 +175,8 @@ class IntroduceSection extends StatelessWidget {
                 width: 200,
                 height: 50,
                 margin: const EdgeInsets.only(top: 40),
-                child:
-                    OutlinedButton(onPressed: () {}, child: Text('View more')),
+                child: OutlinedButton(
+                    onPressed: () {}, child: const Text('View more')),
               ),
             ),
           ],

@@ -2,17 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:my_cv_web/controllers/menu_controller.dart';
 import 'package:my_cv_web/core/utils/responsive.dart';
 import 'package:my_cv_web/core/utils/utils.dart';
+import 'package:my_cv_web/entity/section.dart';
 import 'package:my_cv_web/resource/colors.dart';
 import 'package:my_cv_web/resource/images.dart';
+import 'package:my_cv_web/router/router.dart';
 import 'package:my_cv_web/widgets/custom_animation_container.dart';
 import 'package:provider/provider.dart';
 
 import '../../../widgets/header_nav_item.dart';
 
 class Header extends StatelessWidget {
-  const Header({Key? key, this.showShadow = false}) : super(key: key);
+  const Header({
+    Key? key,
+    this.showShadow = false,
+    required this.sectionNameNotifer,
+  }) : super(key: key);
+
+  final ValueNotifier<SectionModel?> sectionNameNotifer;
 
   final bool showShadow;
+
+  void onPressRoute(index) {
+    sectionNameNotifer.value = SectionModel(
+      name: AppRouter.homePageSectionNames[index],
+      source: SectionSelectionSource.fromButtonClick,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,25 +66,33 @@ class Header extends StatelessWidget {
                     HeaderNavbarItem(
                       content: "About",
                       index: 1,
-                      onPress: () {},
+                      onPress: () {
+                        onPressRoute(0);
+                      },
                       durationMilliseconds: 300,
                     ),
                     HeaderNavbarItem(
                       content: "Experience",
                       index: 2,
-                      onPress: () {},
+                      onPress: () {
+                        onPressRoute(1);
+                      },
                       durationMilliseconds: 400,
                     ),
                     HeaderNavbarItem(
                       content: "Work",
                       index: 3,
-                      onPress: () {},
+                      onPress: () {
+                        onPressRoute(2);
+                      },
                       durationMilliseconds: 500,
                     ),
                     HeaderNavbarItem(
                       content: "Contact",
                       index: 4,
-                      onPress: () {},
+                      onPress: () {
+                        onPressRoute(3);
+                      },
                       durationMilliseconds: 600,
                     ),
                     const SizedBox(width: 15),
@@ -91,7 +114,7 @@ class Header extends StatelessWidget {
                   onTap: () {
                     context.read<MenuController>().controlMenu();
                   },
-                  child: Icon(
+                  child: const Icon(
                     Icons.menu,
                     color: ColorsDef.kPrimaryColor,
                     size: 35,

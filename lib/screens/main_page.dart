@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_polygon/flutter_polygon.dart';
-import 'package:my_cv_web/resource/colors.dart';
+import 'package:my_cv_web/entity/section.dart';
 import 'package:my_cv_web/screens/home/home_page.dart';
 import 'package:my_cv_web/screens/plash/web_plash_page.dart';
-import 'dart:math' as math;
 
 class MainPage extends StatefulWidget {
-  const MainPage({Key? key}) : super(key: key);
+  const MainPage({
+    Key? key,
+    required this.sections,
+    required this.sectionNameNotifer,
+  }) : super(key: key);
+
+  final List<String> sections;
+  final ValueNotifier<SectionModel?> sectionNameNotifer;
 
   @override
   _MainPageState createState() => _MainPageState();
@@ -37,16 +42,19 @@ class _MainPageState extends State<MainPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // body: loading
-      //     ? WebPlashPage(
-      //         onCompleteAnimation: () {
-      //           setState(() {
-      //             loading = false;
-      //           });
-      //         },
-      //       )
-      //     : const HomePage(),
-      body: HomePage(),
+      body: loading
+          ? WebPlashPage(
+              onCompleteAnimation: () {
+                setState(() {
+                  loading = false;
+                });
+              },
+            )
+          : HomePage(
+              sections: widget.sections,
+              sectionNameNotifer: widget.sectionNameNotifer,
+            ),
+      // body: HomePage(),
     );
   }
 }

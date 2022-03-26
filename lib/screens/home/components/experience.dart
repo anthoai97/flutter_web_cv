@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_cv_web/core/utils/utils.dart';
 import 'package:my_cv_web/widgets/custom_animation_container.dart';
 
 import '../../../core/utils/responsive.dart';
@@ -42,9 +41,11 @@ class _ExperienceState extends State<Experience> {
   @override
   Widget build(BuildContext context) {
     final double screenHeight = Responsive.screenHeight(context);
-    final double buttonHeight = 42;
+    const double buttonHeight = 42;
+    print('build experient');
+
     return Container(
-      constraints: BoxConstraints(minHeight: screenHeight * 0.6),
+      constraints: BoxConstraints(minHeight: screenHeight),
       alignment: Alignment.center,
       child: SizedBox(
         width: 900,
@@ -83,12 +84,12 @@ class _ExperienceState extends State<Experience> {
     return InkWell(
       child: Container(
         alignment: Alignment.centerLeft,
-        constraints: BoxConstraints(minWidth: 130),
+        constraints: const BoxConstraints(minWidth: 130),
         height: 42,
-        padding: EdgeInsets.symmetric(horizontal: 25),
+        padding: const EdgeInsets.symmetric(horizontal: 25),
         child: Text(
           name,
-          style: TextStyle(
+          style: const TextStyle(
             color: ColorsDef.kPrimaryColor,
           ),
           textAlign: TextAlign.left,

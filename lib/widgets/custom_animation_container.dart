@@ -19,11 +19,11 @@ class CustomAnimationContainer extends StatefulWidget {
   final Duration delayDuration;
 
   @override
-  _CustomAnimationContainerState createState() =>
-      _CustomAnimationContainerState();
+  CustomAnimationContainerState createState() =>
+      CustomAnimationContainerState();
 }
 
-class _CustomAnimationContainerState extends State<CustomAnimationContainer>
+class CustomAnimationContainerState extends State<CustomAnimationContainer>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
