@@ -6,16 +6,16 @@ import '../../../resource/colors.dart';
 import '../../../resource/styles.dart';
 import '../../../widgets/section_title.dart';
 
-class Experience extends StatefulWidget {
-  const Experience({
+class Project extends StatefulWidget {
+  const Project({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<Experience> createState() => _ExperienceState();
+  State<Project> createState() => _ProjectState();
 }
 
-class _ExperienceState extends State<Experience> {
+class _ProjectState extends State<Project> {
   final GlobalKey _imageKey = GlobalKey();
 
   final TextStyle contentStyle = const TextStyle(
@@ -52,7 +52,7 @@ class _ExperienceState extends State<Experience> {
           duration: const Duration(milliseconds: 500),
           position: 50,
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            const SectionTitle(indexS: '02.', title: 'Where I\'ve Worked'),
+            const SectionTitle(indexS: '03.', title: 'Some Things I’ve Built'),
             Container(
               child: Row(
                 children: [

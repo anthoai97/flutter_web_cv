@@ -64,10 +64,18 @@ class Header extends StatelessWidget {
               ? Row(
                   children: [
                     HeaderNavbarItem(
+                      content: "Introduction",
+                      index: 0,
+                      onPress: () {
+                        onPressRoute(0);
+                      },
+                      durationMilliseconds: 300,
+                    ),
+                    HeaderNavbarItem(
                       content: "About",
                       index: 1,
                       onPress: () {
-                        onPressRoute(0);
+                        onPressRoute(1);
                       },
                       durationMilliseconds: 300,
                     ),
@@ -75,7 +83,7 @@ class Header extends StatelessWidget {
                       content: "Experience",
                       index: 2,
                       onPress: () {
-                        onPressRoute(1);
+                        onPressRoute(2);
                       },
                       durationMilliseconds: 400,
                     ),
@@ -83,7 +91,7 @@ class Header extends StatelessWidget {
                       content: "Work",
                       index: 3,
                       onPress: () {
-                        onPressRoute(2);
+                        onPressRoute(3);
                       },
                       durationMilliseconds: 500,
                     ),
@@ -91,7 +99,7 @@ class Header extends StatelessWidget {
                       content: "Contact",
                       index: 4,
                       onPress: () {
-                        onPressRoute(3);
+                        onPressRoute(4);
                       },
                       durationMilliseconds: 600,
                     ),

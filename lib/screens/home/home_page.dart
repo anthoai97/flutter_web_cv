@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:my_cv_web/core/utils/responsive.dart';
 import 'package:my_cv_web/entity/section.dart';
+import 'package:my_cv_web/screens/home/components/project.dart';
 import 'package:my_cv_web/screens/home/components/side_menu.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
@@ -99,6 +100,7 @@ class _HomePageState extends State<HomePage>
     const IntroduceSection(),
     const AboutMeSection(),
     const Experience(),
+    const Project(),
   ];
 
   @override

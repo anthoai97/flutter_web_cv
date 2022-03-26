@@ -101,7 +101,7 @@ class _HeaderNavbarItemState extends State<HeaderNavbarItem> {
 
   Text _buildIndex(bool isTablet) {
     return Text(
-      '0${widget.index}.',
+      widget.index == 0 ? '0.' : '0${widget.index}.',
       style: TextStyle(
         color: ColorsDef.kPrimaryColor,
         fontSize: isTablet ? 16 : 13,

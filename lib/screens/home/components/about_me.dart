@@ -20,7 +20,7 @@ class _AboutMeSectionState extends State<AboutMeSection> {
   final GlobalKey _imageKey = GlobalKey();
 
   final TextStyle contentStyle = const TextStyle(
-    fontSize: 20,
+    fontSize: 18,
     color: ColorsDef.slate,
     height: 1.3,
     fontFamily: FontDef.calibre,
@@ -155,7 +155,7 @@ class _AboutMeSectionState extends State<AboutMeSection> {
           Flexible(
             child: Text(
               content,
-              style: contentStyle.copyWith(fontSize: 19),
+              style: contentStyle.copyWith(fontSize: 18),
             ),
           ),
         ],
