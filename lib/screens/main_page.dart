@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_cv_web/entity/section.dart';
 import 'package:my_cv_web/screens/home/home_page.dart';
-import 'package:my_cv_web/screens/plash/web_plash_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({
@@ -42,19 +41,22 @@ class _MainPageState extends State<MainPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: loading
-          ? WebPlashPage(
-              onCompleteAnimation: () {
-                setState(() {
-                  loading = false;
-                });
-              },
-            )
-          : HomePage(
-              sections: widget.sections,
-              sectionNameNotifer: widget.sectionNameNotifer,
-            ),
-      // body: HomePage(),
+      // body: loading
+      //     ? WebPlashPage(
+      //         onCompleteAnimation: () {
+      //           setState(() {
+      //             loading = false;
+      //           });
+      //         },
+      //       )
+      //     : HomePage(
+      //         sections: widget.sections,
+      //         sectionNameNotifer: widget.sectionNameNotifer,
+      //       ),
+      body: HomePage(
+        sections: widget.sections,
+        sectionNameNotifer: widget.sectionNameNotifer,
+      ),
     );
   }
 }

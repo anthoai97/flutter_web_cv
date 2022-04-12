@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_cv_web/core/utils/responsive.dart';
 import 'package:my_cv_web/core/utils/utils.dart';
+import 'package:my_cv_web/widgets/content_line.dart';
 import 'package:my_cv_web/widgets/custom_animation_container.dart';
 
 import '../../../resource/colors.dart';
@@ -84,27 +85,49 @@ class _AboutMeSectionState extends State<AboutMeSection> {
                             ),
                           ),
                           const SizedBox(height: 15),
-                          _buildListContent(
-                              "More than 2 years experience on Flutter."),
-                          _buildListContent(
-                              "Quality experience in creating Flutter multiplatform - web & mobile, plugins , packages and making conversation with native through channels."),
-                          _buildListContent(
-                              "Proficient in working with Flutter UI and animation."),
-                          _buildListContent(
-                              "Solid understanding of Clean Architecture, MVP, MVVM, MVC, Design Patterns."),
-                          _buildListContent(
-                              "Knowledge to unit testing and integration test to create an automation test and control bugs."),
-                          _buildListContent(
-                              "Work often with integrating payment methods such as Stripe with Card Authentication & 3D Secure, Google Pay and Apple Pay, ..."),
-                          _buildListContent(
-                              "Good experience working with Git, Version Control."),
-                          _buildListContent(
-                              "Having UI/UX and material design basic knowledge."),
-                          _buildListContent(
-                              "Experience to process building an application from the beginning to the final launch on the Store."),
-                          _buildListContent(
-                              "Communicates well with the team and loves to learn new things."),
-                          _buildListContent("Familiar with Agile methodology."),
+                          const ContentLineWigdet(
+                              fontSize: 18,
+                              content:
+                                  "More than 2 years experience on Flutter."),
+                          const ContentLineWigdet(
+                              fontSize: 18,
+                              content:
+                                  "Quality experience in creating Flutter multiplatform - web & mobile, plugins , packages and making conversation with native through channels."),
+                          const ContentLineWigdet(
+                              fontSize: 18,
+                              content:
+                                  "Proficient in working with Flutter UI and animation."),
+                          const ContentLineWigdet(
+                              fontSize: 18,
+                              content:
+                                  "Solid understanding of Clean Architecture, MVP, MVVM, MVC, Design Patterns."),
+                          const ContentLineWigdet(
+                              fontSize: 18,
+                              content:
+                                  "Knowledge to unit testing and integration test to create an automation test and control bugs."),
+                          const ContentLineWigdet(
+                              fontSize: 18,
+                              content:
+                                  "Work often with integrating payment methods such as Stripe with Card Authentication & 3D Secure, Google Pay and Apple Pay, ..."),
+                          const ContentLineWigdet(
+                              fontSize: 18,
+                              content:
+                                  "Good experience working with Git, Version Control."),
+                          const ContentLineWigdet(
+                              fontSize: 18,
+                              content:
+                                  "Having UI/UX and material design basic knowledge."),
+                          const ContentLineWigdet(
+                              fontSize: 18,
+                              content:
+                                  "Experience to process building an application from the beginning to the final launch on the Store."),
+                          const ContentLineWigdet(
+                              fontSize: 18,
+                              content:
+                                  "Communicates well with the team and loves to learn new things."),
+                          const ContentLineWigdet(
+                              fontSize: 18,
+                              content: "Familiar with Agile methodology."),
                         ],
                       ),
                     ),
@@ -135,30 +158,6 @@ class _AboutMeSectionState extends State<AboutMeSection> {
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  Widget _buildListContent(String content) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 15),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          const Icon(
-            Icons.arrow_right,
-            color: ColorsDef.kPrimaryColor,
-            size: 24,
-          ),
-          const SizedBox(width: 8),
-          Flexible(
-            child: Text(
-              content,
-              style: contentStyle.copyWith(fontSize: 18),
-            ),
-          ),
-        ],
       ),
     );
   }
