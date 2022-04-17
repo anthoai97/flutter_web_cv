@@ -105,7 +105,6 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
-    print('build');
     final isDesktop = Responsive.isDesktop(context);
     const double maxWidth = 1000;
     final double mainPadding = isDesktop ? 150 : 25;

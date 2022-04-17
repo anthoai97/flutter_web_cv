@@ -32,12 +32,6 @@ class _AboutMeSectionState extends State<AboutMeSection> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
-      RenderBox? _imageBox =
-          _imageKey.currentContext?.findRenderObject() as RenderBox?;
-      Size? imageSize = _imageBox?.size;
-      if (imageSize != null) {}
-    });
   }
 
   @override
