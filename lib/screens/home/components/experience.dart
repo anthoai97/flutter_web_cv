@@ -61,7 +61,7 @@ class _ExperienceState extends State<Experience> {
     ];
 
     return Container(
-      constraints: BoxConstraints(minHeight: screenHeight * 3 / 4),
+      constraints: BoxConstraints(minHeight: screenHeight),
       alignment: Alignment.center,
       child: SizedBox(
         width: 900,
